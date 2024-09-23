@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: calculator-ns
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculator
+  namespace: calculator-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calculator
+  template:
+    metadata:
+      labels:
+        app: calculator
+    spec:
+      containers:
+      - name: calculator
+        image: adamrit/simple-calculator:latest
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: calculator
+  namespace: calculator-ns
+spec:
+  selector:
+    app: calculator
+  ports:
+  - name:
+    port: 80
+    targetPort: 80
+    nodePort: 31100
+  type: NodePort
+  
