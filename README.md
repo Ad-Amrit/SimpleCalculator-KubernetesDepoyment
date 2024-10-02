@@ -1,6 +1,6 @@
 # SimpleCalculator-KubernetesDepoyment
 
-This project provides a lightweight and efficient deployment of a simple calculator web application built with HTML, CSS, and JavaScript. We leverage the power of Docker for containerization and Kubernetes for orchestration, ensuring a scalable and manageable application lifecycle.
+This project provides a lightweight and efficient deployment of a simple calculator web application built with HTML, CSS, and JavaScript. Leveraging the power of Docker for containerization and Kubernetes for orchestration, ensuring a scalable and manageable application lifecycle.
 
 This guide outlines the steps for building the Docker image on a separate server and deploying it within a Kubernetes cluster. This separation aligns with best practices, as it keeps your development and build environments dedicated, while Kubernetes focuses solely on managing and running the application.
 
@@ -11,31 +11,34 @@ This guide outlines the steps for building the Docker image on a separate server
 - Docker: Ensure Docker is installed and running on your local machine.
 - Docker Hub Account: Create a Docker Hub account.
 - Project Files: Make sure your HTML, CSS, and JavaScript files are organized in the appropriate directories 
-   To get started, clone this project using Git: https://github.com/Ad-Amrit/SimpleCalculator-KubernetesDepoyment.git
+   To get started, clone this project using Git: `git clone https://github.com/Ad-Amrit/SimpleCalculator-KubernetesDepoyment.git`
 
 2. Build:
 
 - Open a terminal or command prompt and navigate to the project's root directory.
 - Run the following command to build the Docker image:
-- docker build -t <your-username>/simple-calculator . (example: docker build -t adamrit/simple-calculator .)
+- docker build -t <your-username>/simple-calculator . 
    Replace <your-username> with your Docker Hub username
+   (example: `docker build -t adamrit/simple-calculator .`)
 
 **Pushing the Docker Image**
 
 1. Login:
 
 - To push the image to Docker Hub, log in with your Docker Hub credentials:
-   docker login
+   `docker login`
 
 2. Tag Image:
 
 - Tag the image with your desired username and repository name:
    docker tag simple-calculator <your-username>/simple-calculator:latest
+   (e.g: `docker tag simple-calculator adamrit/simple-calculator:latest`
 
 3. Push Image:
 
 - Push the image to Docker Hub:
    docker push <your-username>/simple-calculator:latest
+   (e.g: `docker push adamrit/simple-calculator:latest`)
 
 ![](./assets/DockerHubImage.png "This is an image of Docker Hub")
 
@@ -58,7 +61,7 @@ This guide outlines the steps for building the Docker image on a separate server
 3. Apply Manifests:
 
 - Apply the YAML files to your Kubernetes cluster using the kubectl apply command:
-   kubectl apply -f simple-calculator.yaml
+   `kubectl apply -f simple-calculator.yaml`
 
 4. Access the Application:
 
