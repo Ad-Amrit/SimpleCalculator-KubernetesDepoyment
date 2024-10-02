@@ -1,14 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #9f0707;
 }
 
 .calculator {
     width: 300px;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: #021958;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #03c665;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -37,14 +37,14 @@ body {
     padding: 10px;
     border: none;
     border-radius: 10px;
-    background-color: #f0f0f0;
+    background-color: #b405cb;
     cursor: pointer;
 }
 
 .button:hover {
-    background-color: #e0e0e0;
+    background-color: #e9e509;
 }
 
 .button:active {
-    background-color: #d0d0d0;
+    background-color: #1309d5;
 }
